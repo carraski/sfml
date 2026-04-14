@@ -106,5 +106,3 @@ private:
 
 
 
-
-void mEnemigo(sf::RectangleShape &enemigo, float dt);
