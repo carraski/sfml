@@ -29,24 +29,13 @@ void Adrian::mover(sf::Vector2f direccion, float dt)
 }
 void Adrian::actualizar(sf::Vector2f destino, float dt)
 {
-    void Adrian::actualizar(sf::Vector2f destino, float dt)
-{
-    sf::Vector2f miposicion = sprite.getPosition();
+    sf::Vector2f miposicion,direccion;
+    miposicion = sprite.getPosition();
+    direccion = destino - miposicion;
+    sprite.move(direccion * velocidad * dt);
 
-    // 1. Vector dirección hacia el objetivo
-    sf::Vector2f direccion = destino - miposicion;
-
-    // 2. Calcular longitud del vector
-    float longitud = std::sqrt(direccion.x * direccion.x + direccion.y * direccion.y);
-
-    // Evitar división por 0
-    if (longitud != 0)
-    {
-        // 3. Mover en esa dirección
-        sprite.move(direccion * velocidad * dt);
-    }
 }
-}
+
 void Adrian::dibujar(sf::RenderWindow &ventana) const
 {
     ventana.draw(sprite);
